@@ -293,7 +293,31 @@ def winning_team
 end
 
 
+def player_with_longest_name
+  longest_name = ""
+  length = 0
 
+  game_hash[:away][:players].each do |name, player|
+    if name.length > length
+      puts name
+      puts name.length
+      length = name.length
+      longest_name = name
+    end
+
+  end
+
+  game_hash[:home][:players].each do |name, player|
+    if name.length > length
+      puts name
+      puts name.length
+      length = name.length
+      longest_name = name
+    end
+
+  end
+     longest_name
+end
 
 def long_name_steals_a_ton?
   return true
